@@ -6,12 +6,26 @@
     <title>Zollman Elite Cyclery</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">  
     <link rel="stylesheet" href="http://localhost:3000/assets/css/app.css">
     <meta name="viewport" content="width=device-width"> 
   </head>
   <body>
-    
+    <div class="wrapper">
+<div class="header">
+    <nav>
+    <div class="main-menu">
+        <a href="#">Bikes</a>
+        <a href="#">Gear</a>
+        <a href="#">Repairs</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+    </div><!-- main-menu -->
+    </nav>
+    <h1><a href="#">Elite Cyclery Bicycle Shop</a></h1>
+</div><!-- /header -->
     <div class="gallery-page">
         <h2>Recent Photos</h2>
         <div class="gallery-files">
@@ -105,7 +119,11 @@
            <!--/ end gallery loop -->  
         </div><!--/gallery-files-->
         </div><!--/gallery-page-->
+    <footer>
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:280px;width:100%;'><div id='gmap_canvas' style='height:280px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">                                   embed google maps                           </a></small></div><div><small><a href="https://privacypolicytemplate.net">privacy policy example</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(39.485924121247706,-88.37780988465578),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(39.485924121247706,-88.37780988465578)});infowindow = new google.maps.InfoWindow({content:'<strong>Elite Cyclery Bicycle Shop</strong><br>1901 Champaign Ave Mattoon, IL 61938 <br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
     
+</footer>
+</div><!-- wrapper -->
     <script src="http://localhost:3000/assets/js/app.js"></script>
 
   </body>

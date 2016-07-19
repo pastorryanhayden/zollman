@@ -9,13 +9,13 @@
 // b. Change these variables.
 $body-font-family:'Open Sans', sans-serif;
 $header-font-family: 'Open Sans', sans-serif;
-
+$cursive: 'Courgette', cursive;
 
 // 2. Colors
 // The variables below control the color on the whole site.  Changing them changes the entire sites look and feel.
 $foundation-palette: (
-  primary: #8093AD,
-  secondary: #8093AD,
+  primary: #DC1F00,
+  secondary: #FBD501,
   success: #8093AD,
   warning: #8093AD,
   alert: #8093AD,
@@ -28,6 +28,7 @@ $black: #0e0b08;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
+
 
 // UNLESS YOU KNOW WHAT YOU ARE DOING LEAVE THE REST OF THIS STUFF ALONE!
 //________________________________________________
