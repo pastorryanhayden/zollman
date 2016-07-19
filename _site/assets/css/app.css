@@ -3574,3 +3574,100 @@ body {
       .band .address .address-wrapper p {
         font-size: 14px;
         line-height: 17px; }
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px; }
+  .brands .authorized, .brands .reseller {
+    width: 100%; }
+    @media screen and (min-width: 41.875em) {
+      .brands .authorized, .brands .reseller {
+        width: 50%; } }
+    .brands .authorized h3, .brands .reseller h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #DC1F00;
+      font-style: italic; }
+    .brands .authorized p, .brands .reseller p {
+      color: #DC1F00;
+      font-style: italic;
+      margin-top: 10px; }
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px; }
+  .main-content .home-about, .main-content .secondary {
+    width: 100%; }
+    @media screen and (min-width: 41.875em) {
+      .main-content .home-about, .main-content .secondary {
+        width: 50%; } }
+    .main-content .home-about h3, .main-content .secondary h3 {
+      font-size: 35px;
+      font-weight: bold;
+      color: #DC1F00;
+      text-align: center;
+      margin-bottom: 20px; }
+  .main-content .home-about {
+    border-bottom: 1px solid black;
+    padding: 20px; }
+    @media screen and (min-width: 41.875em) {
+      .main-content .home-about {
+        border-right: 1px solid black;
+        border-bottom: none; } }
+    .main-content .home-about .home-about-images {
+      width: 100%;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      .main-content .home-about .home-about-images img {
+        margin-bottom: 10px; }
+    .main-content .home-about p {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto; }
+
+.secondary {
+  padding: 20px; }
+  .secondary .home-event-inner {
+    display: flex;
+    padding: 20px; }
+  .secondary .home-event-details {
+    margin-right: 20px; }
+    .secondary .home-event-details h4 {
+      font-size: 15px;
+      font-weight: bold;
+      color: black;
+      line-height: 20px;
+      margin-bottom: 0; }
+      .secondary .home-event-details h4 a {
+        color: black; }
+    .secondary .home-event-details p.date {
+      font-style: italic;
+      margin-bottom: 5px; }
+  .secondary .home-photos- {
+    text-align: center; }
+    .secondary .home-photos- img {
+      margin-left: 10px;
+      margin-bottom: 10px; }
+
+.home-bikes {
+  width: 100%;
+  background: #FBD501;
+  text-align: center;
+  padding: 20px; }
+  .home-bikes h3 {
+    color: #DC1F00;
+    font-family: "Courgette", cursive; }
+  .home-bikes .bikes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .home-bikes .bikes a {
+      width: 215px;
+      margin-bottom: 20px; }

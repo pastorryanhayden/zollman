@@ -4,10 +4,10 @@
     <title>Zollman Elite Cyclery</title>
     <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus blanditiis odio corrupti,  illum architecto consequuntur, quaerat unde repudiandae qui temporibus! Fuga maxime molestiae hic impedit  sit sint perferendis rerum unde.
 </description>
-    <link>http://localhost:3000//</link>
-    <atom:link href="http://localhost:3000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jul 2016 08:41:36 -0500</pubDate>
-    <lastBuildDate>Tue, 19 Jul 2016 08:41:36 -0500</lastBuildDate>
+    <link>http://bikes.pubstorm.site//</link>
+    <atom:link href="http://bikes.pubstorm.site//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 19 Jul 2016 15:09:57 -0500</pubDate>
+    <lastBuildDate>Tue, 19 Jul 2016 15:09:57 -0500</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
   </channel>
