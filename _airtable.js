@@ -24,10 +24,20 @@ var pages = new Airtable({ apiKey: config.apikey }).base(config.web);
 var pagesJson = [];
 var pagesJsonTest = [];
 
+var fileQuotes = '_data/quotes.json';
+var quotes = new Airtable({ apiKey: config.apikey }).base(config.web);
+var quotesJson = [];
+var quotesJsonTest = [];
+
 var fileEvents = '_data/events.json';
 var event = new Airtable({ apiKey: config.apikey }).base(config.web);
 var eventsJson = [];
 var eventsJsonTest = [];
+
+var filePhotos = '_data/photos.json';
+var photos = new Airtable({ apiKey: config.apikey }).base(config.web);
+var photosJson = [];
+var photosJsonTest = [];
 
 
 var updated = false;
@@ -117,4 +127,57 @@ var updated = false;
       console.log('events worked');
     });
 
+// quotes 
+
+    quotes('quotes').select({
+        maxRecords: 100
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          quotesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileQuotes, quotesJson, function (err) {
+        console.error(err)
+      });
+      console.log('quotes worked');
+    });
+
     
+// photos 
+
+    photos('photos').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "date", direction: "desc"}]
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          photosJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filePhotos, photosJson, function (err) {
+        console.error(err)
+      });
+      console.log('photos worked');
+    });

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% assign gcontent = site.data.pages | where:"home", "gear_intro" %} 
+
+<div class="main-content">
+{% for item in gcontent %}
+    <div class="about-text">
+    {{ item.markdown_content | markdownify }}
+    </div><!-- about-text -->
+{% endfor %}
+</div><!-- /main-content -->

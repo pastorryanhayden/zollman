@@ -2,26 +2,6 @@
 layout: default
 ---
 {% assign hcontent = site.data.pages | where:"home", "home_content" %} 
-{{hcontent.markdown_content | markdown }}
-<div class="band">
-    <div class="slogan">
-        <h3>“If you want your dreams to happen - wake up”</h3>
-        <p>~Joey Reiman~</p>
-    </div><!-- slogan -->
-        <div class="free-tuneup">
-            <img src="{{site.url}}assets/tuneup.png" alt="">
-            <div class="text">
-            <h3>Free <br>Adjustments</h3>
-            <p>For Life</p>
-            </div><!-- text -->
-        </div><!-- free-tuneup -->
-    <div class="address">
-        <div class="address-wrapper">
-        <p>1901 Champaign Ave <br> Mattoon, IL 61938 <br>(217) 234-6738 <br>
-M-F 8:00-5:30</p>
-</div><!-- address-wrapper -->
-    </div><!-- address -->
-</div><!-- /band -->
 <div class="brands">
     <div class="authorized">
         <h3>Authorized Dealer</h3>
@@ -42,10 +22,8 @@ M-F 8:00-5:30</p>
         <h3>We Live This Stuff!</h3>
         {% for item in hcontent %}
         <div class="home-about-images">
-            {% for img in item.photos | limit: 4 %}
-            <div class="nail">
-                <img src="{{ img.url }}" alt="">
-            </div><!-- nail -->
+            {% for photo in item.photos | limit: 4 %}
+                <img src="{{ photo.thumbnails.large.url }}" alt="" width="75px" height="75px">
             {% endfor %}
 
         </div><!-- home about images -->
@@ -75,14 +53,11 @@ M-F 8:00-5:30</p>
     <div class="home-photos">
         <h3>Recent Photos:</h3>
         <div class="home-photos-wrapper">
-            <img src="{{site.url}}assets/img1.png" alt="">
-            <img src="{{site.url}}assets/img2.png" alt="">
-            <img src="{{site.url}}assets/img3.png" alt="">
-            <img src="{{site.url}}assets/img4.png" alt="">
-            <img src="{{site.url}}assets/img1.png" alt="">
-            <img src="{{site.url}}assets/img2.png" alt="">
-            <img src="{{site.url}}assets/img3.png" alt="">
-            <img src="{{site.url}}assets/img4.png" alt="">
+            {% for gallery in site.data.photos | limit: 1%}
+            {% for photo in gallery.photos | limit: 8 %}
+                <img src="{{ photo.thumbnails.large.url }}" alt="" width="100px" height="100px">
+            {% endfor %}
+            {% endfor %}
         </div><!-- home-photos-wrapper -->
         
     </div><!-- /home-photos -->
@@ -95,9 +70,9 @@ M-F 8:00-5:30</p>
         {% if bike.Picture %}
         <a href="#">{% for img in bike.Picture %}<img src="{{img.url}}" alt="">{% endfor %}</a>
         {% else %}
-        <a href="#">{% for img in bike.Picture %}<img src="http://placehold.it/1920x1080" alt="">{% endfor %}</a>
+        <a href="">{% for img in bike.Picture %}<img src="http://placehold.it/1920x1080" alt="">{% endfor %}</a>
         {% endif %}
         {% endfor %}
     </div><!--/bikes-->
-    <a href="#" class="button">View All Bikes</a>
+    <a href="{{site.url}}bikes.html" class="button">View All Bikes</a>
 </div><!-- home bikes -->

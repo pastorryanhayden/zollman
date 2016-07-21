@@ -3569,8 +3569,9 @@ body {
       .band .address {
         width: 33%; } }
     .band .address .address-wrapper {
-      max-width: 160px;
-      width: 160px; }
+      max-width: 250px;
+      width: 250px;
+      padding-left: 20px; }
       .band .address .address-wrapper p {
         font-size: 14px;
         line-height: 17px; }
@@ -3709,3 +3710,10 @@ body {
 .nail img.portrait {
   width: 100%;
   height: auto; }
+
+.about-text {
+  width: 80%;
+  max-width: 800px;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto; }

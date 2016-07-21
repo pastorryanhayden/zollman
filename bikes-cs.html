@@ -1,0 +1,35 @@
+---
+layout: default
+---
+{% assign bcontent = site.data.pages | where: "home", "bikes_intro" %}
+{% assign bikeinv = site.data.pages %}
+<div class="main-content">
+{% for item in bcontent %}
+    <div class="about-text">
+    {{ item.markdown_content | markdownify }}
+    </div><!-- about-text -->
+{% endfor %}
+</div><!-- /main-content -->
+<div class="bikes">
+    <h3>New Bikes</h3>
+    <h4>Road Bikes</h4>
+    <div class="bikes-wrapper">
+    {% for bike in site.data.bikes %}
+    {% if bike.Item_Condition == "New" and bike.Item_Type == "Road Bike" and  bike.In_Stock %}
+    <div class="single-bike">
+        <img src="http://placehold.it/1920x1080" alt="" class="bike-image">
+        <div class="bike-description">
+            <h4><a href="#">{{bike.Name}}</a></h4>
+            <p>{{bike.gender}}</p>
+            <p>{{bike.Vendor}}</p>
+            <p>{{bike.Unit_Cost}}</p>
+            {% if bike.Description %}
+            {{ bike.Description | markdownify }}
+            {% endif %}
+        </div><!-- bike-description -->
+    </div><!-- single-bike -->
+    {% endif %}
+    {% endfor %}
+    </div><!--/bikes-wrapper-->
+
+</div><!-- bikes -->

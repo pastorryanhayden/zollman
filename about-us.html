@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% assign acontent = site.data.pages | where:"home", "about_us" %} 
+
+<div class="main-content">
+{% for item in acontent %}
+    <div class="about-text">
+    {{ item.markdown_content | markdownify }}
+    </div><!-- about-text -->
+{% endfor %}
+</div><!-- /main-content -->
