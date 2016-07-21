@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign hcontent = site.data.pages | where:"home", "home_content" %} 
+{{hcontent.markdown_content | markdown }}
 <div class="band">
     <div class="slogan">
         <h3>“If you want your dreams to happen - wake up”</h3>
@@ -80,10 +82,13 @@ M-F 8:00-5:30</p>
 <div class="home-bikes">
     <h3>Recent Additions</h3>
     <div class="bikes">
-        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
-        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
-        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
-        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+        {% for bike in site.data.bikes | limit: 4 %}
+        {% if bike.Picture %}
+        <a href="#">{% for img in bike.Picture %}<img src="{{img.url}}" alt="">{% endfor %}</a>
+        {% else %}
+        <a href="#">{% for img in bike.Picture %}<img src="http://placehold.it/1920x1080" alt="">{% endfor %}</a>
+        {% endif %}
+        {% endfor %}
     </div><!--/bikes-->
     <a href="#" class="button">View All Bikes</a>
 </div><!-- home bikes -->
