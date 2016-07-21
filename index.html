@@ -23,7 +23,7 @@ layout: default
         {% for item in hcontent %}
         <div class="home-about-images">
             {% for photo in item.photos | limit: 4 %}
-                <img src="{{ photo.thumbnails.large.url }}" alt="" width="75px" height="75px">
+                <img src="{{ photo.thumbnails.large.url }}" width="75px" height="75px">
             {% endfor %}
 
         </div><!-- home about images -->
