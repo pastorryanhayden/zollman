@@ -3590,6 +3590,7 @@ body {
     .brands .authorized h3, .brands .reseller h3 {
       font-size: 20px;
       margin-bottom: 20px;
+      margin-top: 20px;
       color: #DC1F00;
       font-style: italic; }
     .brands .authorized p, .brands .reseller p {
@@ -3636,9 +3637,18 @@ body {
   padding: 20px; }
   .secondary .home-event-inner {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px; }
   .secondary .home-event-details {
-    margin-right: 20px; }
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; }
+    @media screen and (min-width: 50em) {
+      .secondary .home-event-details {
+        width: 45%;
+        text-align: left;
+        margin-top: 0; } }
     .secondary .home-event-details h4 {
       font-size: 15px;
       font-weight: bold;
@@ -3650,9 +3660,16 @@ body {
     .secondary .home-event-details p.date {
       font-style: italic;
       margin-bottom: 5px; }
-  .secondary .home-photos- {
+  .secondary .home-event-photo {
+    width: 100%;
+    order: -1; }
+    @media screen and (min-width: 50em) {
+      .secondary .home-event-photo {
+        width: 45%;
+        order: 2; } }
+  .secondary .home-photos-wrapper {
     text-align: center; }
-    .secondary .home-photos- img {
+    .secondary .home-photos-wrapper img {
       margin-left: 10px;
       margin-bottom: 10px; }
 
@@ -3667,7 +3684,28 @@ body {
   .home-bikes .bikes {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-content: center; }
     .home-bikes .bikes a {
       width: 215px;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto; }
+
+.nail {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden; }
+
+.nail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  transform: translate(-50%, -50%); }
+
+.nail img.portrait {
+  width: 100%;
+  height: auto; }

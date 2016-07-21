@@ -24,6 +24,11 @@ var pages = new Airtable({ apiKey: config.apikey }).base(config.web);
 var pagesJson = [];
 var pagesJsonTest = [];
 
+var fileEvents = '_data/events.json';
+var event = new Airtable({ apiKey: config.apikey }).base(config.web);
+var eventsJson = [];
+var eventsJsonTest = [];
+
 
 var updated = false;
 
@@ -82,6 +87,34 @@ var updated = false;
         console.error(err)
       });
       console.log('pages worked');
+    });
+
+// events 
+
+    event('events').select({
+        maxRecords: 100,
+        sort: [{field: "datetime", direction: "desc"}]
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          eventsJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileEvents, eventsJson, function (err) {
+        console.error(err)
+      });
+      console.log('events worked');
     });
 
     

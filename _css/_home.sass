@@ -12,6 +12,7 @@
         h3
             font-size: 20px
             margin-bottom: 20px
+            margin-top: 20px
             color: $primary-color
             font-style: italic
         p
@@ -54,9 +55,18 @@
     padding: 20px
     .home-event-inner
         display: flex
+        flex-wrap: wrap
         padding: 20px
     .home-event-details
         margin-right: 20px
+        width: 100%
+        text-align: center
+        margin-top: 20px
+        @include breakpoint(800px)
+            width: 45%
+            text-align: left
+            margin-top: 0
+
         h4
             font-size: 15px
             font-weight: bold
@@ -68,7 +78,14 @@
         p.date
             font-style: italic
             margin-bottom: 5px
-    .home-photos-
+    .home-event-photo
+        width: 100%
+        order: -1
+        @include breakpoint(800px)
+            width: 45%
+            order: 2
+
+    .home-photos-wrapper
         text-align: center
         img
             margin-left: 10px
@@ -85,9 +102,31 @@
         display: flex
         justify-content: space-between
         flex-wrap: wrap
+        align-content: center
+
         a
             width: 215px
             margin-bottom: 20px
+            margin-left: auto
+            margin-right: auto
+.nail 
+  position: relative
+  width: 100px
+  height: 100px
+  overflow: hidden
+
+.nail img 
+  position: absolute
+  left: 50%
+  top: 50%
+  height: 100%
+  width: auto
+  transform: translate(-50%,-50%)
+
+.nail img.portrait 
+  width: 100%
+  height: auto
+
 
 
 
