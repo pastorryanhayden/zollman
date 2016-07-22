@@ -3745,3 +3745,9 @@ body {
       font-family: "Open Sans", sans-serif;
       font-style: italic;
       font-weight: bold; }
+    .bikes .single-bike .price {
+      display: flex;
+      justify-content: space-around; }
+      .bikes .single-bike .price .MSRP {
+        color: #901400;
+        text-decoration: line-through; }

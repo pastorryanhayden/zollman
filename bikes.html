@@ -32,11 +32,11 @@ layout: default
              {% endif %}
             
             <div class="bike-description">
-                <h4><a href="#">{{bike.Name}}</a></h4>
-                <p>{{bike.gender}}</p>
-                <p>{{bike.Vendor}}</p>
-                <p>{{bike.Unit_Cost}}</p>
-            
+                <h4><a href="#">{{bike.Vendor_Name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                <p class="MSRP">${{bike.MSRP}}</p>
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
             {% if bike.Description %}
                 {{ bike.Description | markdownify }}
             {% endif %}
