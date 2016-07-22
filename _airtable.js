@@ -40,6 +40,8 @@ var photosJson = [];
 var photosJsonTest = [];
 
 
+
+
 var updated = false;
 
 // bikes 
@@ -180,4 +182,268 @@ var updated = false;
         console.error(err)
       });
       console.log('photos worked');
+    });
+
+// newRoadBikes 
+
+var filenewRoadBikes = '_data/newRoadBikes.json';
+var newRoadBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var newRoadBikesJson = [];
+var newRoadBikesJsonTest = [];
+
+    newRoadBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Road Bike", Item_Condition = "New", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          newRoadBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filenewRoadBikes, newRoadBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('newRoadBikes worked');
+    });
+
+// New Tri Bikes
+
+var filenewTriBikes = '_data/newTriBikes.json';
+var newTriBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var newTriBikesJson = [];
+var newTriBikesJsonTest = [];
+
+    newTriBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Tri Bike", Item_Condition = "New", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          newTriBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filenewTriBikes, newTriBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('newTriBikes worked');
+    });
+
+// New Mountain Bikes
+
+var filenewMtnBikes = '_data/newRoadBikes.json';
+var newMtnBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var newMtnBikesJson = [];
+var newMtnBikesJsonTest = [];
+
+    newMtnBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Mountain Bike", Item_Condition = "New", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          newMtnBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filenewMtnBikes, newMtnBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('newMtnBikes worked');
+    });
+
+// New Lifestyle Bikes
+
+var filenewLsBikes = '_data/newLsBikes.json';
+var newLsBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var newLsBikesJson = [];
+var newLsBikesJsonTest = [];
+
+    newLsBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Lifestyle Bike", Item_Condition = "New", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          newLsBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filenewLsBikes, newLsBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('newLsBikes worked');
+    });
+
+// Used Road Bikes
+
+var fileusedRoadBikes = '_data/usedRoadBikes.json';
+var usedRoadBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var usedRoadBikesJson = [];
+var usedRoadBikesJsonTest = [];
+
+    usedRoadBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Road Bike", Item_Condition = "Used", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          usedRoadBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileusedRoadBikes, usedRoadBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('usedRoadBikes worked');
+    });
+
+// Used Tri Bikes
+
+var fileusedTriBikes = '_data/usedTriBikes.json';
+var usedTriBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var usedTriBikesJson = [];
+var usedTriBikesJsonTest = [];
+
+    usedTriBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Tri Bike", Item_Condition = "Used", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          usedTriBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileusedTriBikes, usedTriBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('usedTriBikes worked');
+    });
+
+// Used Mountain Bikes
+
+var fileusedMntBikes = '_data/usedMntBikes.json';
+var usedMntBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var usedMntBikesJson = [];
+var usedMntBikesJsonTest = [];
+
+    usedMntBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Mountain Bike", Item_Condition = "Used", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          usedMntBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileusedMntBikes, usedMntBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('usedMntBikes worked');
+    });
+
+// Used Lifestyle Bikes
+
+var fileusedLsBikes = '_data/usedLsBikes.json';
+var usedLsBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var usedLsBikesJson = [];
+var usedLsBikesJsonTest = [];
+
+    usedLsBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Lifestyle Bike", Item_Condition = "Used", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          usedLsBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileusedLsBikes, usedLsBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('usedLsBikes worked');
     });
