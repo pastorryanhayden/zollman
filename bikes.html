@@ -9,4 +9,50 @@ layout: default
     {{ item.markdown_content | markdownify }}
     </div><!-- about-text -->
 {% endfor %}
+
+<div class="bikes">
+    <h3>New Bikes</h3>
+    
+    {% for bike in site.data.newRoadBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4>New Road Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.newRoadBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4><a href="#">{{bike.Name}}</a></h4>
+                <p>{{bike.gender}}</p>
+                <p>{{bike.Vendor}}</p>
+                <p>{{bike.Unit_Cost}}</p>
+            
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.newRoadBikes | limit: 1}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        
+    {% endfor %}
+   
+</div><!-- bikes -->
 </div><!-- /main-content -->

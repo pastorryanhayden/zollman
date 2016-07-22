@@ -8,7 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
 # Leave this alone
 baseurl: "" # the subpath of your site, e.g. /blog
 # Change this to the domain when you are finished and ready to publish.
-url: "http://elitecycleryshop.com/" # the base hostname http://elitecycleryshop.com/ & protocol for your site | Switch to "http://communitybaptistchurch.net/" Before running Glynn.  Afterwards change it back to http://localhost:4000/
+url: "http://localhost:3000/" # the base hostname http://elitecycleryshop.com/ & protocol for your site | Switch to "http://communitybaptistchurch.net/" Before running Glynn.  Afterwards change it back to http://localhost:4000/
 
 # This is the path to the default images.  If you add different default images you can change them here.
 default_header_image: "assets/default_header.jpg"
