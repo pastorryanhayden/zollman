@@ -252,7 +252,7 @@ var newTriBikesJsonTest = [];
 
 // New Mountain Bikes
 
-var filenewMtnBikes = '_data/newRoadBikes.json';
+var filenewMtnBikes = '_data/newMtnBikes.json';
 var newMtnBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
 var newMtnBikesJson = [];
 var newMtnBikesJsonTest = [];

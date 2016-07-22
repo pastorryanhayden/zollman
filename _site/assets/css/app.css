@@ -3724,14 +3724,18 @@ body {
   text-align: center;
   width: 100%; }
   .bikes h3 {
-    font-size: 2.5em;
+    font-size: 3em;
     font-family: "Courgette", cursive;
     color: #DC1F00;
-    width: 100%; }
+    width: 100%;
+    margin-top: 100px; }
   .bikes h4 {
     font-family: "Courgette", cursive;
     width: 100%;
-    color: #af9401; }
+    color: #af9401;
+    border-bottom: 1px dotted #af9401;
+    margin-top: 50px;
+    margin-bottom: 20px; }
   .bikes .bike-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -3751,3 +3755,17 @@ body {
       .bikes .single-bike .price .MSRP {
         color: #901400;
         text-decoration: line-through; }
+
+.jumpmenu {
+  text-align: center;
+  background: #e6e6e6;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -50px;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .jumpmenu p {
+    font-weight: bold; }
+  .jumpmenu h5 {
+    text-decoration: underline; }
