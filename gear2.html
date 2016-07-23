@@ -1,0 +1,375 @@
+---
+layout: default
+---
+{% assign bcontent = site.data.pages | where:"home", "bikes_intro" %} 
+
+<div class="main-content">
+{% for item in bcontent %}
+    <div class="about-text">
+    {{ item.markdown_content | markdownify }}
+    </div><!-- about-text -->
+{% endfor %}
+
+<div class="jumpmenu">
+<p>Jump to a specific Category</p>
+<ul class="menu vertical">
+    <h5>New Bikes</h5>
+    <li><a href="#NR">New Road</a></li>
+    <li><a href="#NT">New Tri</a></li>
+    <li><a href="#NM">New Mountain</a></li>
+    <li><a href="#NL">New Lifestyle</a></li>
+    <h5>Used Bikes</h5>
+    <li><a href="#UR">Used Road</a></li>
+    <li><a href="#UT">Used Tri</a></li>
+    <li><a href="#UM">Used Mountain</a></li>
+    <li><a href="#UL">Used Lifestyle</a></li>
+</ul>
+</div><!--/jumpmenu-->
+<div class="bikes">
+    <h3>New Bikes</h3>
+    
+    {% for bike in site.data.newRoadBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="NR">New Road Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.newRoadBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.newRoadBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+    <!-- Tri Bikes -->
+   
+        {% for bike in site.data.newTriBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="NT">New Tri Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.newTriBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.newTriBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+    
+    <!-- Mountain Bikes -->
+   
+        {% for bike in site.data.newMtnBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="NM">New Mountain Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.newMtnBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.newMtnBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+    <!-- Lifestyle Bikes -->
+   
+        {% for bike in site.data.newLsBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="NL">New Lifestyle Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.newLsBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.newLsBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+        <h3>Used Bikes</h3>
+
+        <!-- Road Bikes -->
+   
+        {% for bike in site.data.usedRoadBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="UR">Used Road Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.usedRoadBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.usedRoadBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+    <!-- Tri Bikes -->
+   
+        {% for bike in site.data.usedTriBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="UT">Used Tri Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.usedTriBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.usedTriBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+       <!-- Mountain Bikes -->
+   
+        {% for bike in site.data.usedMntBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="UM">Used Mountain Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.usedMntBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.usedMntBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+
+    <!-- Lifestyle Bikes -->
+   
+        {% for bike in site.data.usedLsBikes | limit: 1 %}
+        {% if bike.Name %}
+             <h4 id="UL">Used Lifestyle Bikes</h4>
+             <div class="bike-wrapper">
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for bike in site.data.usedLsBikes %}
+        <div class="single-bike">
+            {% if bike.Picture %}
+                {% for img in bike.Picture %}
+                 <img src="{{img.url}}" alt="" class="bike-image">
+                 {% endfor %}
+             {% else %}
+                <img src="http://placehold.it/1920x1080?text=Photo+Coming+Soon" alt="" class="bike-image">
+             {% endif %}
+            
+            <div class="bike-description">
+                <h4 id=""><a href="#">{{bike.Vendor_name}} {{bike.Name}}</a></h4>
+                <div class="price">
+                {% if bike.MSRP %}<p class="MSRP">${{bike.MSRP}}</p>{% endif %}
+                <p class="Sale">${{bike.Price}}</p>
+                </div><!--/price-->
+            {% if bike.Description %}
+                {{ bike.Description | markdownify }}
+            {% endif %}
+        
+            </div><!-- bike-description -->
+        
+        </div><!-- single-bike -->
+    {% endfor %}
+    
+    {% for bike in site.data.usedLsBikes | limit: 1 %}
+    
+        {% if bike.Name %}
+    
+             </div><!--/bike-wrapper-->
+        {% endif %}
+    {% endfor %}
+</div><!-- bikes -->
+</div><!-- /main-content -->
