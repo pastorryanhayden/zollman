@@ -650,3 +650,302 @@ var MiscJsonTest = [];
       });
       console.log('Misc worked');
     });
+
+// Packages 
+var filePackages = '_data/Packages.json';
+var Packages = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var PackagesJson = [];
+var PackagesJsonTest = [];
+
+    Packages('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Package"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          PackagesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filePackages, PackagesJson, function (err) {
+        console.error(err)
+      });
+      console.log('Packages worked');
+    });
+
+// AutoRack 
+var fileAutoRack = '_data/AutoRack.json';
+var AutoRack = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var AutoRackJson = [];
+var AutoRackJsonTest = [];
+
+    AutoRack('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Auto Rack Installation"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          AutoRackJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileAutoRack, AutoRackJson, function (err) {
+        console.error(err)
+      });
+      console.log('AutoRack worked');
+    });
+// FrameService 
+var fileFrameService = '_data/FrameService.json';
+var FrameService = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var FrameServiceJson = [];
+var FrameServiceJsonTest = [];
+
+    FrameService('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Frame Service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          FrameServiceJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileFrameService, FrameServiceJson, function (err) {
+        console.error(err)
+      });
+      console.log('FrameService worked');
+    });
+// WheelService 
+var fileWheelService = '_data/WheelService.json';
+var WheelService = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var WheelServiceJson = [];
+var WheelServiceJsonTest = [];
+
+    WheelService('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Wheel Service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          WheelServiceJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileWheelService, WheelServiceJson, function (err) {
+        console.error(err)
+      });
+      console.log('WheelService worked');
+    });
+// BrakeService 
+var fileBrakeService = '_data/BrakeService.json';
+var BrakeService = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var BrakeServiceJson = [];
+var BrakeServiceJsonTest = [];
+
+    BrakeService('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Brake Service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          BrakeServiceJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileBrakeService, BrakeServiceJson, function (err) {
+        console.error(err)
+      });
+      console.log('BrakeService worked');
+    });
+// ShiftService 
+var fileShiftService = '_data/ShiftService.json';
+var ShiftService = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var ShiftServiceJson = [];
+var ShiftServiceJsonTest = [];
+
+    ShiftService('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Shift service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          ShiftServiceJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileShiftService, ShiftServiceJson, function (err) {
+        console.error(err)
+      });
+      console.log('ShiftService worked');
+    });
+// BottomBracket 
+var fileBottomBracket = '_data/BottomBracket.json';
+var BottomBracket = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var BottomBracketJson = [];
+var BottomBracketJsonTest = [];
+
+    BottomBracket('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Bottom Bracket/Headset Service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          BottomBracketJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileBottomBracket, BottomBracketJson, function (err) {
+        console.error(err)
+      });
+      console.log('BottomBracket worked');
+    });
+// AccessoryInst 
+var fileAccessoryInst = '_data/AccessoryInst.json';
+var AccessoryInst = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var AccessoryInstJson = [];
+var AccessoryInstJsonTest = [];
+
+    AccessoryInst('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Fork/Suspension Service"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          AccessoryInstJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileAccessoryInst, AccessoryInstJson, function (err) {
+        console.error(err)
+      });
+      console.log('AccessoryInst worked');
+    });
+// ForkSusp 
+var fileForkSusp = '_data/ForkSusp.json';
+var ForkSusp = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var ForkSuspJson = [];
+var ForkSuspJsonTest = [];
+
+    ForkSusp('Services').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Service", direction: "asc"}],
+        filterByFormula: 'Category = "Accessory Installation"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          ForkSuspJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileForkSusp, ForkSuspJson, function (err) {
+        console.error(err)
+      });
+      console.log('ForkSusp worked');
+    });
