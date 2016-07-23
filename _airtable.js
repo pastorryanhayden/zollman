@@ -447,3 +447,206 @@ var usedLsBikesJsonTest = [];
       });
       console.log('usedLsBikes worked');
     });
+
+// New Kids Bikes
+
+var filenewKidsBikes = '_data/newKidsBikes.json';
+var newKidsBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var newKidsBikesJson = [];
+var newKidsBikesJsonTest = [];
+
+    newKidsBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Kids Bike", Item_Condition = "New", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          newKidsBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(filenewKidsBikes, newKidsBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('newKidsBikes worked');
+    });
+
+// Used Kids Bikes
+
+var fileusedKidsBikes = '_data/usedKidsBikes.json';
+var usedKidsBikes = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var usedKidsBikesJson = [];
+var usedKidsBikesJsonTest = [];
+
+    usedKidsBikes('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'AND(Item_Type = "Kids Bike", Item_Condition = "Used", In_Stock)',
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          usedKidsBikesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileusedKidsBikes, usedKidsBikesJson, function (err) {
+        console.error(err)
+      });
+      console.log('usedKidsBikes worked');
+    });
+
+
+// Accessories 
+var fileAccessories = '_data/Accessories.json';
+var Accessories = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var AccessoriesJson = [];
+var AccessoriesJsonTest = [];
+
+    Accessories('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'Item_Type = "Accessory"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          AccessoriesJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileAccessories, AccessoriesJson, function (err) {
+        console.error(err)
+      });
+      console.log('Accessories worked');
+    });
+
+// Apparel 
+var fileApparel = '_data/Apparel.json';
+var Apparel = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var ApparelJson = [];
+var ApparelJsonTest = [];
+
+    Apparel('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'Item_Type = "Apparel"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          ApparelJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileApparel, ApparelJson, function (err) {
+        console.error(err)
+      });
+      console.log('Apparel worked');
+    });
+
+// Parts 
+var fileParts = '_data/Parts.json';
+var Parts = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var PartsJson = [];
+var PartsJsonTest = [];
+
+    Parts('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'Item_Type = "Part"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          PartsJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileParts, PartsJson, function (err) {
+        console.error(err)
+      });
+      console.log('Parts worked');
+    });
+
+// Misc 
+var fileMisc = '_data/Misc.json';
+var Misc = new Airtable({ apiKey: config.apikey }).base(config.bikes);
+var MiscJson = [];
+var MiscJsonTest = [];
+
+    Misc('Inventory').select({
+        maxRecords: 100,
+      //sort
+        sort: [{field: "Date_Added", direction: "desc"}],
+        filterByFormula: 'Item_Type = "Misc"',
+      //Formula to how to get data
+      // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
+
+    }).eachPage(function page(records, fetchNextPage) {
+
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+          MiscJson.push(record._rawJson.fields);
+          
+        });
+        fetchNextPage();
+
+    }, function done(error) {
+        if (error) {
+            console.log(error);
+        }
+      jsonfile.writeFile(fileMisc, MiscJson, function (err) {
+        console.error(err)
+      });
+      console.log('Misc worked');
+    });
